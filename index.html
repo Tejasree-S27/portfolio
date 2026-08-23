@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Saligari Tejasree | Portfolio</title>
+
+    <style>
+
+        /* =========================
+           GLOBAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f8f7f4;
+            color: #242424;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            width: 90%;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 0;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #222;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: #555;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #111;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 90vh;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eef6ff,
+                    #f8f1ff,
+                    #f3faf3
+                );
+        }
+
+        .hero h1 {
+            font-size: clamp(2.7rem, 7vw, 5rem);
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #5d5fef;
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 1.15rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 11px 22px;
+            border-radius: 25px;
+            border: 1px solid #222;
+
+            font-size: 0.95rem;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #222;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: #444;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #222;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            background: #f1f1f1;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+
+            display: inline-block;
+
+            border-bottom: 3px solid #222;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+
+        /* =========================
+           CARDS
+        ========================= */
+
+        .card {
+            background: white;
+
+            border-radius: 18px;
+
+            padding: 25px;
+
+            margin-bottom: 20px;
+
+            border: 1px solid #e8e8e8;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.04);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.08);
+        }
+
+        .card p {
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        .card ul {
+            padding-left: 20px;
+        }
+
+        .card li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .pastel-blue {
+            background: #e9f4ff;
+        }
+
+        .pastel-purple {
+            background: #f1eaff;
+        }
+
+        .pastel-green {
+            background: #eaf8ed;
+        }
+
+        .pastel-beige {
+            background: #fff4df;
+        }
+
+        .skill-card p {
+            color: #444;
+            font-weight: 500;
+        }
+
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .experience-date {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .project {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .project h3 {
+            font-size: 1.3rem;
+        }
+
+        .project-label {
+            display: inline-block;
+
+            margin-top: 10px;
+
+            padding: 5px 12px;
+
+            border-radius: 20px;
+
+            background: rgba(0, 0, 0, 0.06);
+
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        .project-link {
+            display: inline-block;
+
+            margin-top: 15px;
+
+            font-weight: 600;
+            font-size: 0.9rem;
+
+            color: #555;
+        }
+
+        .project-link:hover {
+            color: #000;
+        }
+
+
+        /* =========================
+           ACHIEVEMENTS
+        ========================= */
+
+        .achievement-list li {
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           CERTIFICATIONS
+        ========================= */
+
+        .cert-list {
+            list-style: none !important;
+            padding-left: 0 !important;
+        }
+
+        .cert-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cert-list li:last-child {
+            border-bottom: none;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-card {
+            text-align: center;
+        }
+
+        .contact-card p {
+            margin-bottom: 20px;
+        }
+
+        .email {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            gap: 12px;
+
+            margin: 25px 0;
+        }
+
+        .socials a {
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: #f1f1f1;
+
+            font-size: 0.85rem;
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            background: #222;
+            color: white;
+
+            transform: translateY(-4px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 25px;
+
+            border-top: 1px solid #e5e5e5;
+
+            color: #777;
+
+            font-size: 0.9rem;
+        }
+
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .nav-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            h2 {
+                font-size: 1.7rem;
+            }
+
+        }
+
+
+        @media (max-width: 480px) {
+
+            .container {
+                width: 92%;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .socials {
+                gap: 8px;
+            }
+
+            .socials a {
+                width: 40px;
+                height: 40px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <div class="nav-container">
+
+        <div class="logo">
+            Saligari Tejasree
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#achievements">Achievements</a>
+            </li>
+
+            <li>
+                <a href="#certifications">Certifications</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero fade-in">
+
+    <h1>
+        Hi, I'm <span>Saligari Tejasree</span>
+    </h1>
+
+    <p>
+        B.Tech CSE (AI & DS) student passionate about
+        Software Development and Artificial Intelligence.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="#projects" class="btn btn-primary">
+            View My Projects
+        </a>
+
+        <a href="#contact" class="btn btn-secondary">
+            Contact Me
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<main class="container">
+
+
+<!-- =========================
+     ABOUT ME
+========================= -->
+
+<section id="about">
+
+    <h2>About Me</h2>
+
+    <div class="card">
+
+        <p>
+            I'm pursuing B.Tech in Computer Science Engineering
+            (AI & DS) at Mother Teresa Institute of Engineering
+            and Technology.
+        </p>
+
+        <p>
+            <strong>CGPA:</strong> 8.46
+        </p>
+
+        <p>
+            Interested in Software Development and
+            Artificial Intelligence.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+    <h2>Skills</h2>
+
+    <div class="grid">
+
+
+        <div class="card pastel-blue skill-card">
+
+            <h3>Programming</h3>
+
+            <p>
+                Java, Python(basics)
+            </p>
+
+        </div>
+
+
+        <div class="card pastel-purple skill-card">
+
+            <h3>Web Development</h3>
+
+            <p>
+                HTML, CSS, JavaScript, React
+            </p>
+
+        </div>
+
+
+        <div class="card pastel-green skill-card">
+
+            <h3>Databases</h3>
+
+            <p>
+                MongoDB, SQL, Firebase
+            </p>
+
+        </div>
+
+
+        <div class="card pastel-beige skill-card">
+
+            <h3>Interests</h3>
+
+            <p>
+                Software Development,
+                Artificial Intelligence
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section id="experience">
+
+    <h2>Experience</h2>
+
+    <div class="card">
+
+        <h3>
+            Fresher
+        </h3>
+
+        <p>
+            Passionate about software development and
+            artificial intelligence, with hands-on
+            experience through academic and personal
+            projects.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+    <h2>Projects</h2>
+
+    <div class="grid">
+
+
+        <!-- E-Commerce Web -->
+
+        <a
+            href="https://github.com/Tejasree-S27/E-Commerce_Web"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card project web"
+        >
+
+            <h3>
+                E-Commerce Web
+            </h3>
+
+            <p>
+                Shopping platform designed to provide
+                users with an online shopping experience.
+            </p>
+
+            <!-- <span class="project-label">
+                Web Development
+            </span> -->
+
+            <span class="project-link">
+                View on GitHub →
+            </span>
+
+        </a>
+
+
+
+        <!-- Tourvism -->
+
+        <a
+            href="https://github.com/Tejasree-S27/TOURVISM"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card project web"
+        >
+
+            <h3>
+                TOURVISM
+            </h3>
+
+            <p>
+                Travel planning platform for exploring
+                destinations and planning trips.
+            </p>
+
+            <!-- <span class="project-label">
+                Web Development
+            </span> -->
+
+            <span class="project-link">
+                View on GitHub →
+            </span>
+
+        </a>
+
+
+
+        <!-- Book Heaven -->
+
+        <a
+            href="https://github.com/Tejasree-S27/Book-Heaven"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card project web"
+        >
+
+            <h3>
+                Book Heaven
+            </h3>
+
+            <p>
+                Online bookstore designed for exploring
+                and purchasing books.
+            </p>
+
+            <!-- <span class="project-label">
+                Web Development
+            </span> -->
+
+            <span class="project-link">
+                View on GitHub →
+            </span>
+
+        </a>
+
+
+
+        <!-- MagicAcademy -->
+
+        <a
+            href="https://github.com/Tejasree-S27/MagicAcademy"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card project web"
+        >
+
+            <h3>
+                MagicAcademy
+            </h3>
+
+            <p>
+                Educational project focused on creating
+                an engaging learning experience.
+            </p>
+
+            <!-- <span class="project-label">
+                Web Development
+            </span> -->
+
+            <span class="project-link">
+                View on GitHub →
+            </span>
+
+        </a>
+
+
+
+        <!-- Flight Reservation System -->
+
+        <a
+            href="https://github.com/Tejasree-S27/Flight-Reservation-System"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card project web"
+        >
+
+            <h3>
+                Flight Reservation System
+            </h3>
+
+            <p>
+                Flight reservation application designed
+                to manage flight information and bookings.
+            </p>
+
+            <!-- <span class="project-label">
+                Application
+            </span> -->
+
+            <span class="project-link">
+                View on GitHub →
+            </span>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ACHIEVEMENTS & ACTIVITIES
+========================= -->
+
+<section id="achievements">
+
+    <h2>Achievements & Activities</h2>
+
+    <div class="card">
+
+        <ul class="achievement-list">
+
+            <li>
+                Presented a research paper on
+                <strong>
+                    Blockchain-based Fake URL Detection
+                    and Cybersecurity Enhancement
+                </strong>
+                at CRATE-2025.
+            </li>
+
+            <li>
+                Participated in a
+                <strong>24-hour Web Development Hackathon</strong>
+                and developed the
+                <strong>"Tourism & Business"</strong>
+                project.
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CERTIFICATIONS & INTERNSHIPS
+========================= -->
+
+<section id="certifications">
+
+    <h2>Certifications & Internships</h2>
+
+    <div class="card">
+
+        <ul class="cert-list">
+
+
+            <li>
+                <strong>
+                    AI/ML Developer Internship
+                </strong>
+                — Vaultsphere AI Technologies
+            </li>
+
+
+            <li>
+                <strong>
+                    Data Engineering Virtual Internship
+                </strong>
+                — AWS Academy
+            </li>
+
+
+            <li>
+                <strong>
+                    IoT Cloud Engineer Virtual Internship
+                </strong>
+                — AWS Skill Builder
+            </li>
+
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <h2>Contact Me</h2>
+
+    <div class="card contact-card">
+
+        <p>
+            Feel free to reach out!
+        </p>
+
+
+        <p class="email">
+            stejasree348@gmail.com
+        </p>
+
+
+        <div class="socials">
+
+
+            <!-- LinkedIn -->
+
+            <a
+                href="https://in.linkedin.com/in/saligari-tejasree-ba36412b9"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="LinkedIn"
+            >
+                in
+            </a>
+
+
+            <!-- GitHub -->
+
+            <a
+                href="https://github.com/Tejasree-S27"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="GitHub"
+            >
+                GH
+            </a>
+
+
+            <!-- LeetCode -->
+
+            <a
+                href="https://leetcode.com/u/S-Tejasree/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="LeetCode"
+            >
+                LC
+            </a>
+
+
+            <!-- Email -->
+
+            <a
+                href="mailto:stejasree348@gmail.com"
+                title="Email"
+            >
+                @
+            </a>
+
+
+        </div>
+
+
+        <p>
+            Let's connect and build something meaningful.
+        </p>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        © 2026 Saligari Tejasree. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    /* Navbar shadow on scroll */
+
+    const nav = document.querySelector("nav");
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 50) {
+
+            nav.style.boxShadow =
+                "0 4px 20px rgba(0, 0, 0, 0.06)";
+
+        } else {
+
+            nav.style.boxShadow = "none";
+
+        }
+
+    });
+
+
+    /* Card reveal animation */
+
+    const cards =
+        document.querySelectorAll(".card");
+
+    const observer =
+        new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.style.opacity = "1";
+
+                        entry.target.style.transform =
+                            "translateY(0)";
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.1
+            }
+        );
+
+
+    cards.forEach((card) => {
+
+        card.style.opacity = "0";
+
+        card.style.transform =
+            "translateY(20px)";
+
+        card.style.transition =
+            "opacity 0.6s ease, transform 0.6s ease";
+
+        observer.observe(card);
+
+    });
+
+</script>
+
+
+</body>
+
+</html>
